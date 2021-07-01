@@ -1,0 +1,44 @@
+.QEPanel {
+  padding: 50px 40px;
+  background: #003146;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__equation {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    // max-width: 731px;
+    align-items: flex-end;
+  }
+
+  &__item {
+    margin-right: 30px;
+    max-width: 150px;
+  }
+
+  &__calc {
+    border: 0 none;  
+    padding: 24px 43px;
+    background: linear-gradient(90.39deg, #61dafb 15.46%, #00baed 87.46%);
+    box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+}

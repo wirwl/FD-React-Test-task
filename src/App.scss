@@ -1,6 +1,46 @@
 .App {
   max-width: 1440px;
-  background-color: darkblue;
+  background-color: black;
+  flex-grow: 1;
+  padding-left: 183px;
+  background: linear-gradient(180deg, #00090D 0%, #001F2D 100%);
+
+  &__title {
+    color: #fff;
+    font-family: Segoe UI;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 63px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 30px;
+    max-width: 771px;
+  }
+
+  &__react {
+    color: #61dafb;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 63px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__desc {
+    color: #fff;
+    max-width: 564px;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 60px;
+  }
 }
 
 // .App {
