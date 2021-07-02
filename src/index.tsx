@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
+import './fonts/montserrat/fonts.css';
+import './fonts/segoe-ui/fonts.css'
+import './fonts/roboto/fonts.css';
+
 import App from './blocks/App/App';
 import reportWebVitals from './reportWebVitals';
 
