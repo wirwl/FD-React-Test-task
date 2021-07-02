@@ -11,7 +11,7 @@ const InputField = ({ text = "text" }: Props) => {
   return (
     <label className={b()}>
       <span className={b('caption')}>{text}</span>
-      <input className={b("input")} />
+      <input type='number' className={b("input")} />
     </label>
   );
 };

@@ -2,10 +2,15 @@
   // max-width: 1440px;
   background-color: black;
   flex-grow: 1;
-  padding: 124px 182px 110px 183px;
-  background-image: linear-gradient(180deg, #00090D 0%, #001F2D 100%), url(../../blocks/App/logo.svg);
-  background-position: 0% 0%,  350px 300px;
-  background-repeat: no-repeat, no-repeat;
+  padding: calc(100vw * (124/1440)) calc(100vw * (182/1440)) calc(100vw * (110/1440)) calc(100vw * (183/1440));
+  background-image: url(logo.svg), radial-gradient(50% 50% at 50% 50%, rgba(1, 187, 237, 0.4) 0%, rgba(1, 187, 237, 0) 100%), radial-gradient(50% 50% at 50% 50%, rgba(1, 187, 237, 0.35) 0%, rgba(1, 187, 237, 0) 100%), linear-gradient(180deg, #00090D 0%, #001F2D 100%);  
+  background-blend-mode: normal, lighten, lighten, normal;
+  background-size: 194px 174px, 708px 708px, 708px 708px, auto auto;
+  background-position: 737px 67px, calc(100vw * (1258/1440)) 610px, -185px 19px, 0% 0%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll, scroll;
+  background-origin: border-box;
+
 
   &__title {
     color: #fff;
@@ -18,6 +23,21 @@
     text-align: left;
     margin-bottom: 30px;
     max-width: 771px;
+    position: relative;
+    // background: url('logo.svg');
+    // background-repeat: no-repeat;
+    // background-position: 472px -61px;
+    // background-clip: padding-box;
+
+    &::after {
+      // position: absolute;
+      // content: '';
+     
+      // width:194px ;
+      // height: 174px;
+      // left: 472px;
+      // bottom: 11px;
+    }
   }
 
   &__react {
