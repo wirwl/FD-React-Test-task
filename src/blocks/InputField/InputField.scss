@@ -33,4 +33,10 @@
     border: 0;
     color: #fff;
   }
+
+  @media all and (max-width: 465px) {
+    &__input {
+      padding: 20px;
+    }
+  }
 }
