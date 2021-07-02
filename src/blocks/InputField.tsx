@@ -4,7 +4,7 @@ import './InputField.scss';
 const b = block("InputField");
 
 type Props = {
-  text?: string;
+  text?: string;  
 };
 
 const InputField = ({ text = "text" }: Props) => {

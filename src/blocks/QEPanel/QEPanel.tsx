@@ -14,12 +14,12 @@ const QEPanel = () => {
     <div className={qep()}>
       <div className={qep("wrapper-eq")}>
         <h3 className={qep("title")}>Пример уравнения</h3>
-        <p className={qep("equation")}>``</p>
+        <p className={qep("equation")}>ax<sup className={qep('degree')}>2</sup>+bx+c=0</p>
       </div>
       <div className={qep("wrapper-coefs")}>
         <ul className={qep('list')}>
-          {["Коэффициент A", "Коэффициент B", "Коэффициент C"].map((item) => (
-            <li className={qep('item')}>
+          {["Коэффициент A", "Коэффициент B", "Коэффициент C"].map((item, index) => (
+            <li key={index} className={qep('item')}>
               <InputField text={item} />
             </li>
           ))}

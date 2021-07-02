@@ -41,6 +41,37 @@
     text-align: left;
     margin-bottom: 60px;
   }
+
+  &__wrapper-answer {
+    display: flex;
+    flex-wrap: wrap;
+    gap:  20px 30px;
+    align-items: flex-start;
+  }
+
+  &__InputFields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    padding-top: 7px;
+  }
+
+  &__answer-title {
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 0;
+    margin-right: 144px;                
+  }
+
+  &__InputField {
+    width: 150px;
+  }
 }
 
 // .App {
