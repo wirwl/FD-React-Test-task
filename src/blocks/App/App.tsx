@@ -1,9 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import block from 'bem-cn';
-import QEPanel from './blocks/QEPanel/QEPanel';
-import InputField from './blocks/InputField';
+import QEPanel from '../QEPanel/QEPanel';
+import InputField from '../InputField/InputField';
 
  const b = block('App')
 

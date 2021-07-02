@@ -1,7 +1,7 @@
 import "./QEPanel.scss";
 import block from "bem-cn";
 import { useState } from "react";
-import InputField from "../InputField";
+import InputField from "../InputField/InputField";
 
 const qep = block("QEPanel");
 
