@@ -1,31 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.scss";
 import block from "bem-cn";
 import QEPanel from "../QEPanel/QEPanel";
 import InputField from "../InputField/InputField";
+import { qeCalc } from "../../utils";
 
 const b = block("App");
 
 function App() {
+  const root1 = useRef(null);
+  const root2 = useRef(null);
+
+  const onCalc = (a: number, b: number, c: number) => {
+    const [r1, r2] = qeCalc(a, b, c);
+    (root1.current as any).value = r1;
+    (root2.current as any).value = r2;
+  }
+
   return (
     <div className={b()}>
       <div className={b("ellipse1")} />
       <h1 className={b("title")}>
-        Тестовое задание для разработчиков на{" "}
-        <span className={b("react")}>React</span>
+        Тестовое задание для&nbsp;разработчиков на
+        <span className={b("react")}> React</span>
       </h1>
       <p className={b("desc")}>
         Разработать интерфейс для решения квадратных уравнений
       </p>
-      <QEPanel />
+      <QEPanel onCalc={onCalc} />
       <div className={b("wrapper-answer")}>
         <h3 className={b("answer-title")}>Ответ</h3>
         <div className={b("InputFields")}>
           <div className={b("InputField")}>
-            <InputField text="Корень 1" />
+            <InputField ref1={root1} isReadOnly={true} text="Корень 1" />
           </div>
           <div className={b("InputField")}>
-            <InputField text="Корень 2" />
+            <InputField ref1={root2} isReadOnly={true} text="Корень 2" />
           </div>
         </div>
       </div>
