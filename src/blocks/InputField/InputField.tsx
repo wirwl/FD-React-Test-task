@@ -10,9 +10,19 @@ type Props = {
   isRequired?: boolean;
   isReadOnly?: boolean;
   refInput?: React.MutableRefObject<null>;
+  inputValue?: number;
 };
 
-const InputField = ({ text = "text", onHandleChange, isRequired = false, isReadOnly = false, refInput }: Props) => {
+const InputField = (props: Props) => {
+  const {
+    text = "text",
+    onHandleChange,
+    isRequired = false,
+    isReadOnly = false,
+    refInput,
+    inputValue = undefined
+  } = props;
+
   const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +33,7 @@ const InputField = ({ text = "text", onHandleChange, isRequired = false, isReadO
   return (
     <label className={b()}>
       <span className={b('caption')}>{text}</span>
-      <input ref={refInput} readOnly={isReadOnly} required={isRequired} type='number' className={b("input")} value={value} onChange={handleChange} />
+      <input ref={refInput} readOnly={isReadOnly} required={isRequired} type='number' className={b("input")} value={inputValue === undefined ? value : inputValue} onChange={handleChange} />
     </label>
   );
 };
