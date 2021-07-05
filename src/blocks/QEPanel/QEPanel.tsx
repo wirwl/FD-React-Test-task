@@ -11,20 +11,21 @@ type Props = {
 }
 
 const QEPanel = ({ onCalc }: Props) => {
-  const [a, setA] = useState("a");
-  const [b, setB] = useState("b");
-  const [c, setC] = useState("c");
+  const [a, setA] = useState<number>();
+  const [b, setB] = useState<number>();
+  const [c, setC] = useState<number>();
 
   const onHandleInputChange = (value: string, index: number) => {
+    const numValue = parseInt(value);
     switch (index) {
       case 0:
-        setA(value);
+        setA(numValue);
         break;
       case 1:
-        setB(value);
+        setB(numValue);
         break;
       case 2:
-        setC(value);
+        setC(numValue);
     }
 
   }

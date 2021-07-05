@@ -3,7 +3,7 @@ import "./App.scss";
 import block from "bem-cn";
 import QEPanel from "../QEPanel/QEPanel";
 import InputField from "../InputField/InputField";
-import { qeCalc } from "../../utils";
+import { qeCalc } from "../../utils/utils";
 
 const b = block("App");
 
@@ -12,9 +12,10 @@ function App() {
   const root2 = useRef(null);
 
   const onCalc = (a: number, b: number, c: number) => {
-    const [r1, r2] = qeCalc(a, b, c);
+    const roots = qeCalc(a, b, c);
+    const [r1, r2] = roots;
     (root1.current as any).value = r1;
-    (root2.current as any).value = r2;
+    if (r2) (root2.current as any).value = r2;
   }
 
   return (
@@ -32,10 +33,10 @@ function App() {
         <h3 className={b("answer-title")}>Ответ</h3>
         <div className={b("InputFields")}>
           <div className={b("InputField")}>
-            <InputField ref1={root1} isReadOnly={true} text="Корень 1" />
+            <InputField refInput={root1} isReadOnly={true} text="Корень 1" />
           </div>
           <div className={b("InputField")}>
-            <InputField ref1={root2} isReadOnly={true} text="Корень 2" />
+            <InputField refInput={root2} isReadOnly={true} text="Корень 2" />
           </div>
         </div>
       </div>
