@@ -103,6 +103,30 @@
     width: 150px;
   }
 
+  &__inf {
+    padding-top: 20px;
+    // display: none;
+    display: inline-flex;
+    opacity: 0;
+    align-items: center;
+    transition: opacity 150ms ease-in-out;
+
+    &_shown {
+      opacity: 1;
+    }
+  }
+
+  &__inf-text {
+    font-family: Montserrat;
+    color: #fff;
+  }
+
+  &__inf-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
   @media all and (min-width: 1441px) {
     padding-top: 124px;
   }
@@ -130,6 +154,8 @@
 
   @media all and (max-width: 555px) {
     background-position: calc(100% - 7px) 11px, 320px 704px, 0% 0%;
+    background-size: 136px 122px, 298px 298px, 100vw 50px;
+
     &__title,
     &__react {
       font-size: 38px;
