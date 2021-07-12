@@ -19,7 +19,7 @@ const QEPanel = ({ onCalc }: Props) => {
 
   const onHandleInputChange = (value: string, index: number) => {
     const numValue = parseInt(value);
-    
+
     switch (index) {
       case 0:
         setA(numValue);
@@ -33,7 +33,8 @@ const QEPanel = ({ onCalc }: Props) => {
   }
 
   useEffect(() => {
-    if (isNaN(a!) || isNaN(b!) || isNaN(c!)) setDisableButtonCalc(true);
+    if (isNaN(a!) || isNaN(b!) || isNaN(c!)) 
+      setDisableButtonCalc(true);
     else setDisableButtonCalc(false);
 
   }, [a, b, c]);
@@ -55,7 +56,7 @@ const QEPanel = ({ onCalc }: Props) => {
           {["Коэффициент A", "Коэффициент B", "Коэффициент C"].map(
             (item, index) => (
               <li key={index} className={qep("item")}>
-                <InputField isRequired text={item} onHandleChange={(value: string) => onHandleInputChange(value, index)} />
+                <InputField wrongValues={index === 0 ? ['0'] : []} isRequired text={item} onHandleChange={(value: string) => onHandleInputChange(value, index)} />
               </li>
             )
           )}

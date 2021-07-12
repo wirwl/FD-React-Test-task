@@ -11,6 +11,7 @@ type Props = {
   isReadOnly?: boolean;
   refInput?: React.MutableRefObject<null>;
   inputValue?: number;
+  wrongValues?: string[];
 };
 
 const InputField = (props: Props) => {
@@ -20,14 +21,16 @@ const InputField = (props: Props) => {
     isRequired = false,
     isReadOnly = false,
     refInput,
-    inputValue = undefined
+    inputValue = undefined,
+    wrongValues = []
   } = props;
 
   const [value, setValue] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-    onHandleChange && onHandleChange(e.target.value);
+    const newValue = wrongValues.includes(e.target.value) ? '' : e.target.value;
+    setValue(newValue);
+    onHandleChange && onHandleChange(newValue);
   }
 
   return (
