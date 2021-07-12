@@ -12,4 +12,8 @@ describe('Check roots calculation for quadratic equation', ()=> {
     test('If the discriminant is zero, then there is exactly one real root', () => {
         expect(qeCalc(3, -18, 27)).toStrictEqual([3]);
     });
+
+    test('If the quadratic coefficient is zero', () => {
+        expect(qeCalc(0, 1, 2)).toStrictEqual([]);
+    });
 });

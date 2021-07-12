@@ -19,6 +19,7 @@ const QEPanel = ({ onCalc }: Props) => {
 
   const onHandleInputChange = (value: string, index: number) => {
     const numValue = parseInt(value);
+    
     switch (index) {
       case 0:
         setA(numValue);
@@ -54,7 +55,7 @@ const QEPanel = ({ onCalc }: Props) => {
           {["Коэффициент A", "Коэффициент B", "Коэффициент C"].map(
             (item, index) => (
               <li key={index} className={qep("item")}>
-                <InputField isRequired={true} text={item} onHandleChange={(value: string) => onHandleInputChange(value, index)} />
+                <InputField isRequired text={item} onHandleChange={(value: string) => onHandleInputChange(value, index)} />
               </li>
             )
           )}
